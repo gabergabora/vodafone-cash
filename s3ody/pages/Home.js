@@ -18,7 +18,7 @@ export function Phoneitem({
   avilabletosend,
   onDeletePost,
   id,
-  availabletorequst
+  availabletorequst,
 }) {
   const handleDelete = () => {
     onDeletePost(id);
@@ -32,18 +32,22 @@ export function Phoneitem({
             phon: phon,
             availabletoadd: availabletoadd,
             avilabletosend: avilabletosend,
-            availabletorequst:availabletorequst,
-            id:id
+            availabletorequst: availabletorequst,
+            id: id,
           });
         }}
       >
         <View style={styles.phoneItem2}>
           <Text style={styles.buttonText}>رقم الهاتف: {phon}</Text>
-          <Text style={styles.buttonText}>الرصيد المتاح : {avilabletosend}</Text>
+          <Text style={styles.buttonText}>
+            الرصيد المتاح : {avilabletosend}
+          </Text>
           <Text style={styles.buttonText}>
             المتاح ادخاله للرقم: {availabletoadd}
           </Text>
-          <Text style={styles.buttonText}>المتاح تحويل للرقم :{availabletorequst}</Text>
+          <Text style={styles.buttonText}>
+            المتاح تحويل للرقم :{availabletorequst}
+          </Text>
         </View>
       </TouchableOpacity>
 
@@ -67,7 +71,7 @@ export default function Home() {
   const handleDeletePost = (PhoneId) => {
     deletephons(PhoneId);
   };
-  
+
   useEffect(() => {
     fetchPhoneData();
     const unsubscribe = subscribephons(() => {
@@ -79,12 +83,13 @@ export default function Home() {
 
   return (
     <View>
-      <View style={styles.container}>
-        <View>
+      <View>
+        <View style={styles.LogoView}>
           <Image source={logo} style={styles.logo} />
         </View>
-        <ScrollView>
-          <View>
+        
+        <ScrollView contentContainerStyle={{ alignItems: "center" }}>
+          <View style={{paddingBottom:50}}>
             <Text
               style={{
                 color: "#424242",
@@ -93,7 +98,6 @@ export default function Home() {
                 textAlign: "center",
                 alignSelf: "center",
                 paddingBottom: 12,
-                
               }}
             >
               ارقام فودافون كاش
@@ -109,10 +113,8 @@ export default function Home() {
                 onDeletePost={handleDeletePost}
               />
             ))}
-          </View>
-        </ScrollView>
-      </View>
-      <TouchableOpacity
+          <Text style={{textAlign:"center"}}>___________________________</Text>
+          <TouchableOpacity
         style={styles.touchableOpacity}
         onPress={() => {
           navigation.navigate("Commponant");
@@ -120,6 +122,46 @@ export default function Home() {
       >
         <Text style={styles.touchableOpacityText}>اضافة رقم هاتف جديد </Text>
       </TouchableOpacity>
+      <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+      </View>
+        </ScrollView>
+      </View>
+      
     </View>
   );
 }
@@ -130,20 +172,17 @@ const styles = StyleSheet.create({
     height: 240,
     borderRadius: 10,
   },
-  container: {
-    flex: 1,
+  LogoView: {
     alignItems: "center",
-    justifyContent: "flex-start", // Align items from the top
-    marginTop: 28, // Remove any top margin
+    marginTop: 40,
   },
   touchableOpacity: {
-    position: "//#endregion",
     backgroundColor: "#4575a8",
     margin: 50,
     borderRadius: 50,
+    width:250
   },
   touchableOpacityitem: {
-    position: "//#endregion",
     backgroundColor: "#4575a8",
     margin: 10,
     borderRadius: 50,
@@ -154,7 +193,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     alignSelf: "center",
-    paddingBottom:6
+    paddingBottom: 6,
   },
   phoneItem2: {
     backgroundColor: "#white",

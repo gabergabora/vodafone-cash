@@ -47,47 +47,96 @@ export default function Commponant() {
   };
 
   return (
-    <View style={styles.container}>
-      <View>
+    <View style={styles.mainView}>
+      <View style={styles.LogoView}>
         <Image source={logo} style={styles.logo} />
       </View>
+      <ScrollView contentContainerStyle={{ alignItems: "center" }}>
+        <View style={{paddingBottom:200}} >
       <TextInput
         style={styles.input}
         value={phon}
         onChangeText={setPhon}
         placeholder="ادخل رقم الهاتف"
+        keyboardType="numeric"
       />
       <TextInput
         style={styles.input}
         value={availabletoadd}
         onChangeText={setAvailableToAdd}
         placeholder="ادخل القيمة المسموحة للرقم"
+        keyboardType="numeric"
       />
       <TextInput
         style={styles.input}
         value={avilabletosend}
         onChangeText={setAvilableToSend}
         placeholder="الرصيد المتاح في الخط "
+        keyboardType="numeric"
       />
       <TextInput
         style={styles.input}
         value={availabletorequst}
         onChangeText={setavailabletorequst}
         placeholder="ادخل القيمة المسموح ارسالها"
+        keyboardType="numeric"
       />
-      <TouchableOpacity onPress={checkData} style={styles.button}>
-        <Text style={styles.buttonText}>Done</Text>
+      <TouchableOpacity onPress={checkData}  style={styles.touchableOpacity}>
+        <Text style={styles.touchableOpacityText}>Done</Text>
       </TouchableOpacity>
+      <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        
+      </View>
+      </ScrollView>
+      <Text></Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  touchableOpacity: {
+    backgroundColor: "#4575a8",
+    marginTop:20,
+    borderRadius: 50,
+    width:250
+  },
+  touchableOpacityText: {
+    color: "#f5f5f5",
+    fontSize: 22,
+    fontWeight: "bold",
+    textAlign: "center",
+    alignSelf: "center",
+    paddingBottom: 6,
+  },
+  LogoView: {
     alignItems: "center",
-    justifyContent: "flex-start", // Align items from the top
-    marginTop: 10, // Remove any top margin
+    marginTop: 0,
+  },mainView: {
+    alignItems: "center",
+    marginTop: 25,
   },
   logo: {
     width: 220,
@@ -95,7 +144,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   input: {
-    width: "70%",
+    width: 250,
     backgroundColor: "#FFFFFF",
     height: 40,
     borderWidth: 2,
@@ -105,13 +154,14 @@ const styles = StyleSheet.create({
     borderRadius:25,
   },
   button: {
-    backgroundColor: "#4575a8",
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    marginTop: 20,
-    borderRadius:50,
-    width: 328,
-    height: 48,
+    backgroundColor: "#4575A8",
+    paddingVertical: 3, // Adjust the padding as needed
+    paddingHorizontal: 80, // Adjust the padding as needed
+    marginTop: 10,
+    borderRadius: 25, // Adjust the border radius as needed
+    width: 220,
+    height:40,
+    
   },
   buttonText: {
     color: "white",

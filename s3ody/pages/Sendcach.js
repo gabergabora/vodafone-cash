@@ -46,20 +46,24 @@ export default function Sendcach({ route }) {
       <View>
         <Image source={logo} style={styles.logo} />
       </View>
+      
       <TextInput
         style={styles.input}
         value={send}
         onChangeText={setsend}
         placeholder="ادخل القيمة المراد ارسالها"
+        keyboardType="numeric"
       />
       <TouchableOpacity onPress={funsendmony} style={styles.button}>
         <Text style={styles.buttonText}> Done</Text>
+       
       </TouchableOpacity>
       <TextInput
         style={styles.input}
         value={addmony}
         onChangeText={setaddmony}
         placeholder="ادخل القيمة المدخلة للرقم"
+        keyboardType="numeric"
       />
       <TouchableOpacity onPress={funaddmony} style={styles.button}>
         <Text style={styles.buttonText}> Done</Text>
@@ -72,7 +76,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "flex-start", // Align items from the top
+    justifyContent: "top", // Align items from the top
     marginTop: 10, // Remove any top margin
   },
   signInText: {
@@ -86,6 +90,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 18,
     fontWeight: "bold",
+    textAlign: 'center',
   },
   logo: {
     width: 220,
