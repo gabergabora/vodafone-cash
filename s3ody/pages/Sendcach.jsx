@@ -11,14 +11,13 @@ import {
 import { editphons, editphonssend } from "../db/phonnumbers";
 import logo from "../assets/signin/logo.png";
 import { getUserUId } from "../db/auth";
-import { useNavigation } from "@react-navigation/native";
 
-export default function Sendcach({ route }) {
+export default function Sendcach({ route, navigation }) {
   const { phon, availabletoadd, avilabletosend, id, availabletorequst } =
     route.params;
   const [send, setsend] = useState("");
   const [addmony, setaddmony] = useState("");
-  const navigation = useNavigation();
+
   const funaddmony = async () => {
     const newavailabletoadd = parseInt(availabletoadd) - parseInt(addmony);
     const newavilabletosend = parseInt(avilabletosend) + parseInt(addmony);
@@ -46,7 +45,7 @@ export default function Sendcach({ route }) {
       <View>
         <Image source={logo} style={styles.logo} />
       </View>
-      
+
       <TextInput
         style={styles.input}
         value={send}
@@ -56,7 +55,6 @@ export default function Sendcach({ route }) {
       />
       <TouchableOpacity onPress={funsendmony} style={styles.button}>
         <Text style={styles.buttonText}> Done</Text>
-       
       </TouchableOpacity>
       <TextInput
         style={styles.input}
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 18,
     fontWeight: "bold",
-    textAlign: 'center',
+    textAlign: "center",
   },
   logo: {
     width: 220,

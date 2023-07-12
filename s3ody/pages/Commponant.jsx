@@ -8,12 +8,11 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import {addphons} from "../db/phonnumbers";
+import { addphons } from "../db/phonnumbers";
 import logo from "../assets/signin/logo.png";
 import { getUserUId } from "../db/auth";
-import { useNavigation } from "@react-navigation/native";
-export default function Commponant() {
-  const navigation = useNavigation();
+
+export default function Commponant({ navigation }) {
   const [phon, setPhon] = useState("");
   const [availabletoadd, setAvailableToAdd] = useState("");
   const [avilabletosend, setAvilableToSend] = useState("");
@@ -34,15 +33,15 @@ export default function Commponant() {
       alert("من فضلك ادخل قيمة صحيحة");
     } else {
       getUserUId().then((id) => {
-      addphons({
-        phon: phon,
-        Uid:id,
-        availabletoadd: availabletoadd,
-        avilabletosend: avilabletosend,
-        availabletorequst:availabletorequst
+        addphons({
+          phon: phon,
+          Uid: id,
+          availabletoadd: availabletoadd,
+          avilabletosend: avilabletosend,
+          availabletorequst: availabletorequst,
+        });
       });
-    })
-    navigation.navigate("Home");
+      navigation.navigate("Home");
     }
   };
 
@@ -52,64 +51,63 @@ export default function Commponant() {
         <Image source={logo} style={styles.logo} />
       </View>
       <ScrollView contentContainerStyle={{ alignItems: "center" }}>
-        <View style={{paddingBottom:200}} >
-      <TextInput
-        style={styles.input}
-        value={phon}
-        onChangeText={setPhon}
-        placeholder="ادخل رقم الهاتف"
-        keyboardType="numeric"
-      />
-      <TextInput
-        style={styles.input}
-        value={availabletoadd}
-        onChangeText={setAvailableToAdd}
-        placeholder="ادخل القيمة المسموحة للرقم"
-        keyboardType="numeric"
-      />
-      <TextInput
-        style={styles.input}
-        value={avilabletosend}
-        onChangeText={setAvilableToSend}
-        placeholder="الرصيد المتاح في الخط "
-        keyboardType="numeric"
-      />
-      <TextInput
-        style={styles.input}
-        value={availabletorequst}
-        onChangeText={setavailabletorequst}
-        placeholder="ادخل القيمة المسموح ارسالها"
-        keyboardType="numeric"
-      />
-      <TouchableOpacity onPress={checkData}  style={styles.touchableOpacity}>
-        <Text style={styles.touchableOpacityText}>Done</Text>
-      </TouchableOpacity>
-      <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        
-      </View>
+        <View style={{ paddingBottom: 200 }}>
+          <TextInput
+            style={styles.input}
+            value={phon}
+            onChangeText={setPhon}
+            placeholder="ادخل رقم الهاتف"
+            keyboardType="numeric"
+          />
+          <TextInput
+            style={styles.input}
+            value={availabletoadd}
+            onChangeText={setAvailableToAdd}
+            placeholder="ادخل القيمة المسموحة للرقم"
+            keyboardType="numeric"
+          />
+          <TextInput
+            style={styles.input}
+            value={avilabletosend}
+            onChangeText={setAvilableToSend}
+            placeholder="الرصيد المتاح في الخط "
+            keyboardType="numeric"
+          />
+          <TextInput
+            style={styles.input}
+            value={availabletorequst}
+            onChangeText={setavailabletorequst}
+            placeholder="ادخل القيمة المسموح ارسالها"
+            keyboardType="numeric"
+          />
+          <TouchableOpacity onPress={checkData} style={styles.touchableOpacity}>
+            <Text style={styles.touchableOpacityText}>Done</Text>
+          </TouchableOpacity>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+        </View>
       </ScrollView>
       <Text></Text>
     </View>
@@ -119,9 +117,9 @@ export default function Commponant() {
 const styles = StyleSheet.create({
   touchableOpacity: {
     backgroundColor: "#4575a8",
-    marginTop:20,
+    marginTop: 20,
     borderRadius: 50,
-    width:250
+    width: 250,
   },
   touchableOpacityText: {
     color: "#f5f5f5",
@@ -134,7 +132,8 @@ const styles = StyleSheet.create({
   LogoView: {
     alignItems: "center",
     marginTop: 0,
-  },mainView: {
+  },
+  mainView: {
     alignItems: "center",
     marginTop: 25,
   },
@@ -151,7 +150,7 @@ const styles = StyleSheet.create({
     borderColor: "#4575a8",
     marginVertical: 10,
     paddingHorizontal: 10,
-    borderRadius:25,
+    borderRadius: 25,
   },
   button: {
     backgroundColor: "#4575A8",
@@ -160,8 +159,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: 25, // Adjust the border radius as needed
     width: 220,
-    height:40,
-    
+    height: 40,
   },
   buttonText: {
     color: "white",

@@ -60,8 +60,7 @@ export function Phoneitem({
     </View>
   );
 }
-export default function Home() {
-  const navigation = useNavigation();
+export default function Home({ navigation }) {
   const [phonelist, setphonelist] = useState([]);
 
   const fetchPhoneData = async () => {
@@ -87,9 +86,9 @@ export default function Home() {
         <View style={styles.LogoView}>
           <Image source={logo} style={styles.logo} />
         </View>
-        
+
         <ScrollView contentContainerStyle={{ alignItems: "center" }}>
-          <View style={{paddingBottom:50}}>
+          <View style={{ paddingBottom: 50 }}>
             <Text
               style={{
                 color: "#424242",
@@ -113,55 +112,58 @@ export default function Home() {
                 onDeletePost={handleDeletePost}
               />
             ))}
-          <Text style={{textAlign:"center"}}>___________________________</Text>
-          <TouchableOpacity
-        style={styles.touchableOpacity}
-        onPress={() => {
-          navigation.navigate("Commponant");
-        }}
-      >
-        <Text style={styles.touchableOpacityText}>اضافة رقم هاتف جديد </Text>
-      </TouchableOpacity>
-      <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-      </View>
+            <Text style={{ textAlign: "center" }}>
+              ___________________________
+            </Text>
+            <TouchableOpacity
+              style={styles.touchableOpacity}
+              onPress={() => {
+                navigation.navigate("Commponant");
+              }}
+            >
+              <Text style={styles.touchableOpacityText}>
+                اضافة رقم هاتف جديد{" "}
+              </Text>
+            </TouchableOpacity>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+          </View>
         </ScrollView>
       </View>
-      
     </View>
   );
 }
@@ -180,7 +182,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#4575a8",
     margin: 50,
     borderRadius: 50,
-    width:250
+    width: 250,
   },
   touchableOpacityitem: {
     backgroundColor: "#4575a8",
