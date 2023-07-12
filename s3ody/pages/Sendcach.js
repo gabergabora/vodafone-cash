@@ -76,7 +76,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "top", // Align items from the top
     marginTop: 10, // Remove any top margin
   },
   signInText: {
